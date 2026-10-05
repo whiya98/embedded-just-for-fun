@@ -1,0 +1,8 @@
+case_id,function,arg1,arg2,expected_return,actual_return,check
+enable_off,enable,0xA8,,0xA9,0xA9,ENABLE 설정과 비대상 비트 보존
+enable_on,enable,0xA9,,0xA9,0xA9,이미 켜진 ENABLE 유지와 비대상 비트 보존
+replace_mode,set_mode,0xAB,2,0xAD,0xAD,MODE 교체와 비대상 비트 보존
+repair_mode_11,set_mode,0xAF,2,0xAD,0xAD,기존 MODE 11에서 교체와 비대상 비트 보존
+disable,disable,0xAD,,0xAC,0xAC,ENABLE 해제와 비대상 비트 보존
+ready_with_other_bit,is_ready,0x09,,1,1,다른 상태 비트가 함께 켜진 READY 추출
+not_ready,is_ready,0x01,,0,0,READY가 꺼진 입력에서 0 또는 1 반환 확인
