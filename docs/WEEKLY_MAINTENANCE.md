@@ -10,7 +10,11 @@
 
 05회차는 출제자 요청에 따라 `weeks/week05/reference/`의 한국어 해설 코드와 실행용 Host·Test를 예외적으로 공개합니다. `starter/`의 결함은 보존하고 제출은 기존 `submissions/week05/<github-id>/` 경로를 사용합니다. 다른 회차의 해설과 비공개 자료까지 복사하지 않습니다.
 
-06회차의 풀이 접근법은 `weeks/week06/APPROACH.md`로 공개합니다. GitHub에는 코드와 Markdown 문서를 사용하고 PDF는 올리지 않습니다. PDF는 로컬 `materials/weekNN/`와 로컬 배포 ZIP에서만 관리하며, PDF와 PDF가 포함된 ZIP은 Git으로 추적하거나 Push하지 않습니다.
+06회차의 풀이 접근법은 `weeks/week06/APPROACH.md`로 공개합니다.
+
+07회차는 `weeks/week07/APPROACH.md`와 `baseline/`의 원본 실행 Log를 과제와 함께 공개합니다. `starter/`의 네 Module은 개선 전 상태를 유지하며, 현상·원인·해결방안과 직접 실행한 검증을 `submissions/week07/<github-id>/`의 PR로 받습니다. 완성 참고 구현과 내부 검증 자료는 `materials/week07/answer/`에 유지합니다.
+
+GitHub에는 코드와 Markdown 문서를 사용하고 PDF와 ZIP은 올리지 않습니다. PDF는 로컬 `materials/weekNN/`와 로컬 배포 ZIP에서만 관리하며, PDF와 ZIP은 Git으로 추적하거나 Push하지 않습니다.
 
 `materials`와 개인정보가 담긴 수업자료는 이 저장소 바깥에 둡니다. 이 저장소의 로컬 커밋 이름·이메일은 출제자가 지정한 값으로 설정하며 다른 저장소의 전역 설정은 바꾸지 않습니다.
 
@@ -24,7 +28,7 @@
 4. `starter`에는 개선 전 함수와 실습에 필요한 API·Build 설정·검증 도구를 넣습니다. 정답 구현과 출제자 해설을 넣지 않습니다. 4주차처럼 Host 대역을 제공할 경우 실제 MCU 실행과의 차이를 명시합니다.
 5. 필요한 정상·경계·오류 입력을 `cases.csv` 등에 정리합니다.
 6. 루트 `README.md` 과제 목록에 주차별 링크를 추가합니다.
-7. PDF와 PDF가 포함된 ZIP이 제외되었는지 확인하고, 올릴 파일만 지정해서 커밋한 뒤 `main`에 푸시합니다.
+7. PDF·ZIP·공개가 허용되지 않은 완성 참고 구현과 내부 검증 자료가 제외되었는지 확인하고, 올릴 파일만 지정해서 커밋한 뒤 `main`에 푸시합니다.
 
 ```sh
 cd /path/to/firstclass/issues

@@ -11,7 +11,8 @@
 - 출제자의 정답, 비공개 해설, 개인별 수업자료, 학생 개인정보, 토큰 및 인증 파일을 이 공개 저장소에 복사하지 않는다.
 - 05회차만 예외: 출제자의 명시적 요청으로 `weeks/week05/reference/`에 한국어 해설 주석을 포함한 구현과 실행용 Host·Test를 공개한다. 원본 `starter/`는 유지하고, 풀이 PR은 기존처럼 `submissions/week05/<github-id>/`에 제출한다. 다른 회차의 해설이나 `materials` 전체를 공개하는 허용으로 확대하지 않는다.
 - 06회차 문서 공개 예외(2026-10-19 갱신): 출제자의 요청으로 풀이 접근법은 `weeks/week06/APPROACH.md`로 공개한다. 과제와 풀이 접근법 PDF는 로컬 `materials/week06/`에서 관리한다. 전체 참고 구현과 내부 검증 Log는 `materials/week06/answer/reference/`에 유지한다. 풀이 PR은 `submissions/week06/<github-id>/`에 제출한다.
-- GitHub에는 코드와 Markdown 문서를 사용한다. PDF는 로컬 `firstclass/materials/weekNN/`와 로컬 배포 ZIP에서만 관리하며 Git으로 추적하거나 Push하지 않는다. PDF가 포함된 ZIP도 공개 저장소에 넣지 않는다.
+- 07회차 문서 공개 예외(2026-10-25): 출제자의 요청으로 `weeks/week07/APPROACH.md`를 과제 Markdown·공식 근거·제출 안내와 함께 공개한다. `baseline/`에는 원본 실행 Log, `starter/`에는 개선 전 네 Module과 Host Test·분석 양식을 둔다. 완성 참고 구현과 내부 검증 자료는 `materials/week07/answer/`에 유지하고 PDF·ZIP은 공개하지 않는다. 풀이 PR은 `submissions/week07/<github-id>/`에 제출한다.
+- GitHub에는 코드와 Markdown 문서를 사용한다. PDF는 로컬 `firstclass/materials/weekNN/`와 로컬 배포 ZIP에서만 관리하며 Git으로 추적하거나 Push하지 않는다. ZIP도 공개 저장소에 넣지 않는다.
 - 출제자가 새 과제를 요청하면 원본과 문제만 해당 주차에 추가하고 루트 과제 목록을 갱신한다. 해설은 별도 `firstclass/materials/weekNN/`에서 관리한다.
 - 로컬에서 생성하는 문제 풀이 접근법 PDF의 파일명은 `<과제 PDF의 확장자를 뺀 파일명>_문제_풀이_접근법.pdf`로 통일한다. 예: `06회차_TC387QP_Interrupt_수집_개선_요청서_문제_풀이_접근법.pdf`. 공개 Markdown에서는 저장소의 Markdown 문서를 연결하며 로컬 PDF나 삭제한 PDF 경로를 다운로드 링크로 안내하지 않는다.
 - 기존 주차 문제를 정정할 때는 변경 내용을 주차 README의 변경 기록에 남긴다. 학생이 제출한 전제 조건을 몰래 바꾸지 않는다.

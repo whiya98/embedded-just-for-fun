@@ -11,14 +11,17 @@
 | 4주차 | MCU 구조, Build, 초기화, Git 관리 | [MCU 초기화 기능 구현](weeks/week04/README.md) | [네 Module과 Host test](weeks/week04/starter/) |
 | 05회차 | TC387QP GPIO, STM Timer, Polling, 주기 수집 | [주기 수집 기능 개선](weeks/week05/README.md) | [세 Module과 Host test](weeks/week05/starter/) |
 | 06회차 | TC387QP Interrupt, ISR, 공유 데이터 처리 | [Interrupt 수집 개선](weeks/week06/README.md) | [세 Module과 Host Test](weeks/week06/starter/) |
+| 07회차 | TC387QP UART 기록, Frame, Parsing, 부분 송신 | [UART 기록·Parsing 개선](weeks/week07/README.md) | [네 Module과 Host Test](weeks/week07/starter/) |
 
-`week02`, `week03`, `week04`, `week05`, `week06`은 수업 회차입니다. 달력의 월별 주차나 제출 마감일을 뜻하지 않습니다.
+`week02`, `week03`, `week04`, `week05`, `week06`, `week07`은 수업 회차입니다. 달력의 월별 주차나 제출 마감일을 뜻하지 않습니다.
 
 **4주차를 시작한다면 [4주차 전용 제출 안내](weeks/week04/SUBMISSION.md)를 따라 하세요.** MCU 요구값을 네 `.c` Module에 구현하고, Host test와 Build 단계 확인을 마친 뒤 실제 PR을 제출합니다.
 
 **05회차는 [한국어 해설 코드](weeks/week05/reference/README.md)를 함께 공개합니다.** 해설과 근거를 읽고 원본 Starter를 개선한 뒤, Timing 분석과 직접 작성한 추가 Test·실행 결과를 기존 방식의 PR로 제출하세요. 자세한 순서는 [05회차 제출 안내](weeks/week05/SUBMISSION.md)를 따릅니다.
 
 **06회차는 [풀이 접근법](weeks/week06/APPROACH.md)을 함께 제공합니다.** 학습 목표·공식 근거·11개 근본 원인을 참고해 세 C Module을 직접 개선하고, 추가 Test와 실행 결과를 [06회차 제출 안내](weeks/week06/SUBMISSION.md)에 따라 PR로 제출하세요.
+
+**07회차는 [원본 실행 Log](weeks/week07/baseline/README.md)와 [풀이 접근법](weeks/week07/APPROACH.md)을 함께 제공합니다.** UART 기록의 현상·원인·해결방안을 근거로 정리하고 네 C Module을 직접 개선합니다. 분할·합쳐진 RX 입력과 부분 TX 수용을 검증한 뒤, 추가 Test와 실행 결과를 [07회차 제출 안내](weeks/week07/SUBMISSION.md)에 따라 PR로 제출하세요.
 
 ## 과제 풀기
 
@@ -62,6 +65,14 @@ weeks/
     REFERENCES.md             # Datasheet·STM·Interrupt·iLLD 공식 근거
     APPROACH.md               # 공개 풀이 접근법과 모든 근본 원인
     starter/                  # 개선 전 세 Module과 결정적 Host Test
+  week07/
+    README.md                 # TC387QP UART 기록·Parsing 개선 요구사항
+    SUBMISSION.md             # 원본 관찰부터 개선·검증·PR 제출까지
+    PR_BODY.md                # 현상·원인·해결방안·검증 기록 양식
+    REFERENCES.md             # ASCLIN·UART·iLLD 공식 근거
+    APPROACH.md               # 공개 풀이 접근법과 근본 원인 분석
+    baseline/                 # 원본 Host Test와 Demo 실행 Log
+    starter/                  # 개선 전 네 Module, Host Test, 분석 양식
 submissions/
   week02/<github-id>/         # 학생별 PR로 추가
     decode_rain.c            # 자신의 개선 코드
@@ -92,6 +103,14 @@ submissions/
     README.md                # 모든 근본 원인과 수정 근거
     BUILD_ENV.md             # 실제 실행 환경
     CONCURRENCY.md           # 흐름도·경쟁 순서·IRQ 복구·지연 분석
+  week07/<github-id>/
+    src/                     # 직접 개선한 UART 설정·Codec·RX·TX
+    tests/                   # 고정 Test와 직접 추가한 경계 Test
+    logs/                    # 실제 수정 전·후 Test와 Demo 결과
+    README.md                # 최종 변경 요약
+    BUILD_ENV.md             # 실제 실행 환경과 검증 기록
+    PROBLEM_DEFINITION.md    # 현상·가설·근본 원인·해결방안·검증
+    PROTOCOL.md              # Byte 규격·상태 전이·처리량·공식 근거
 templates/
   week/README.md              # 새 주차 문제 작성 양식
   submission/README.md        # 학생 답변 작성 양식
@@ -106,7 +125,8 @@ docs/
 - `weeks`에는 항상 개선 전 코드와 문제를 보존합니다.
 - 05회차만 `reference`의 한국어 해설 코드를 함께 제공합니다. 참고 구현을 읽고 스스로 근거를 설명하며 검증하는 학습 방식입니다. 다른 회차의 비공개 해설은 포함하지 않습니다.
 - 06회차는 풀이 접근법 Markdown 문서를 공개합니다. 내용을 참고해 직접 개선 코드를 작성하고 추가 Test와 실제 실행 결과를 제출합니다.
-- PDF는 로컬 자료와 배포 ZIP에서 관리하며 이 저장소에는 올리지 않습니다.
+- 07회차는 원본 실행 Log와 풀이 접근법 Markdown 문서를 공개합니다. 완성 참고 구현과 내부 검증 자료는 포함하지 않으며, 관찰한 현상과 원인 가설을 구분해 직접 개선하고 검증합니다.
+- PDF와 ZIP은 로컬에서 관리하며 이 저장소에는 올리지 않습니다.
 - 풀이 PR은 자기 `submissions` 폴더에 제출합니다. 원본이나 다른 사람의 답안을 덮어쓰지 않습니다.
 - 증상 한 개만 고치는 것으로 끝내지 않고, 문제의 근본 원인을 모두 찾아 설명합니다.
 - 정답 구현을 한 가지로 고정하지 않습니다. 요구 조건을 만족하는지, 선택한 방식의 근거와 단점을 설명하는지 함께 봅니다.
