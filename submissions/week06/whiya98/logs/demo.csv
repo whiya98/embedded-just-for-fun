@@ -1,0 +1,10 @@
+cc -Iinclude -Ihost -Itests -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/event_mailbox.c src/timer_isr.c src/collector.c host/fake_platform.c host/demo.c  -o build/mission-demo
+./build/mission-demo
+scenario,main_tick,report,request_tick,requests,coalesced,dropped,value,next_pending,sensor_calls,publish_calls,io_in_isr,io_irq_disabled
+empty,0,0,0,0,0,0,0,0,0,0,0,0
+normal,12,1,10,1,0,0,1234,0,1,1,0,0
+already_taken,15,0,0,0,0,0,0,0,1,1,0,0
+late_main,35,1,30,3,2,0,1234,0,1,1,0,0
+overflow,65,1,40,4,3,2,1234,0,1,1,0,0
+snapshot_race,15,1,10,1,0,0,1234,1,1,1,0,0
+next_request,22,1,20,1,0,0,1234,0,2,2,0,0

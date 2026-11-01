@@ -1,0 +1,5 @@
+mkdir -p build
+cc -Iinclude -Ihost -Itests -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/event_mailbox.c src/timer_isr.c src/collector.c host/fake_platform.c tests/test_mission.c tests/test_student.c  -o build/mission-tests
+./build/mission-tests
+452 checks, 0 failures
+Exit code: 0

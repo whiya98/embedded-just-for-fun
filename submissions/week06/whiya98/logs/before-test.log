@@ -1,0 +1,112 @@
+mkdir -p build
+cc -Iinclude -Ihost -Itests -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/event_mailbox.c src/timer_isr.c src/collector.c host/fake_platform.c tests/test_mission.c tests/test_student.c  -o build/mission-tests
+./build/mission-tests
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:41: g_events.dropped == dropped
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:41: g_events.dropped == dropped
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:41: g_events.dropped == dropped
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:41: g_events.dropped == dropped
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:84: same_batch(out, sentinel)
+FAIL tests/test_mission.c:86: fake.irq_enabled == (enabled != 0u)
+FAIL tests/test_mission.c:96: fake.irq_enabled == (enabled != 0u)
+FAIL tests/test_mission.c:84: same_batch(out, sentinel)
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:115: event_take(&out)
+FAIL tests/test_mission.c:116: out.pending == 1u && out.dropped == 0u && out.last_tick == 50u
+FAIL tests/test_mission.c:125: !fake.irq_enabled
+FAIL tests/test_mission.c:126: fake.irq_pending
+FAIL tests/test_mission.c:127: fake.isr_calls == 0u
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:138: same_batch(out, sentinel)
+FAIL tests/test_mission.c:147: strcmp(fake.trace, "ISNX") == 0
+FAIL tests/test_mission.c:151: fake.sensor_calls == 0u
+FAIL tests/test_mission.c:152: fake.publish_calls == 0u
+FAIL tests/test_mission.c:153: fake.delay_calls == 0u
+FAIL tests/test_mission.c:154: fake.io_in_isr == 0u
+FAIL tests/test_mission.c:160: strcmp(fake.trace, "ISNX") == 0
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:192: out.dropped == (n == 4u ? 2u : 0u)
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:192: out.dropped == (n == 4u ? 2u : 0u)
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:189: out.request_tick == n * 10u
+FAIL tests/test_mission.c:191: out.coalesced == n - 1u
+FAIL tests/test_mission.c:192: out.dropped == (n == 4u ? 2u : 0u)
+FAIL tests/test_mission.c:199: fake.io_irq_disabled == 0u
+FAIL tests/test_mission.c:201: fake.now_calls == 0u
+FAIL tests/test_mission.c:223: out.requests == 3u && out.coalesced == 2u && out.request_tick == 30u
+FAIL tests/test_mission.c:224: fake.sensor_calls == 1u && fake.publish_calls == 1u
+FAIL tests/test_mission.c:225: fake.io_irq_disabled == 0u && fake.io_in_isr == 0u
+FAIL tests/test_mission.c:229: out.requests == 1u && out.coalesced == 0u && out.request_tick == 40u
+FAIL tests/test_mission.c:230: fake.sensor_calls == 2u && fake.publish_calls == 2u
+FAIL tests/test_mission.c:223: out.requests == 3u && out.coalesced == 2u && out.request_tick == 30u
+FAIL tests/test_mission.c:224: fake.sensor_calls == 1u && fake.publish_calls == 1u
+FAIL tests/test_mission.c:225: fake.io_irq_disabled == 0u && fake.io_in_isr == 0u
+FAIL tests/test_mission.c:229: out.requests == 1u && out.coalesced == 0u && out.request_tick == 40u
+FAIL tests/test_mission.c:230: fake.sensor_calls == 2u && fake.publish_calls == 2u
+FAIL tests/test_mission.c:40: g_events.pending == pending
+FAIL tests/test_mission.c:41: g_events.dropped == dropped
+FAIL tests/test_mission.c:42: g_events.last_tick == tick
+FAIL tests/test_mission.c:241: fake.sensor_calls == 0u && fake.publish_calls == 0u
+FAIL tests/test_mission.c:245: out.requests == 4u && out.coalesced == 3u && out.dropped == 2u
+FAIL tests/test_mission.c:246: out.request_tick == 40u
+FAIL tests/test_mission.c:247: fake.sensor_calls == 1u && fake.publish_calls == 1u
+FAIL tests/test_mission.c:248: fake.io_in_isr == 0u && fake.io_irq_disabled == 0u
+422 checks, 106 failures
+make: *** [Makefile:20: test] Error 1
+Exit code: 2
